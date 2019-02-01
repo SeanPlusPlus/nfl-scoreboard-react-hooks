@@ -1,0 +1,54 @@
+body {
+  background-color: #fafafa;
+}
+
+.title {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #333;
+}
+
+.btn {
+  margin-right: 7px !important;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+#actions {
+  padding-left: 23px;
+  padding-top: 5px;
+}
+
+#main {
+  padding-left: 20px;
+  padding-right: 23px;
+  padding-top: 15px;
+}
+
+#main-alert {
+  min-height: 50px;
+}
+
+#games > .row > div > .game {
+  border: none;
+  width: 170px;
+}
+
+img.logo {
+  max-height: 40px;
+}
+
+.score {
+  padding-top: 7px;
+  padding-left: 15px;
+}
+
+div.default-game {
+  background-color: #fafafa;
+}
+
+div.high-scoring {
+  border: 1px solid #111;
+  background-color: #fff;
+}
