@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import _ from 'lodash'
+import axios from 'axios'
 import { Row, Col } from 'reactstrap'
 import './App.css'
 import Game from './Game'
@@ -11,16 +12,16 @@ const App = () => {
   const [title] = useState('NFL 2016 Week 1 Scoreboard')
 
   useEffect(() => {
-    const url = '/californiastoke/nfl2016.json'
-    fetch(url)
-      .then(response => (
-        response.json()
-      ))
-      .then((json) => {
-        const { nfl } = json
-        const data = _.get(nfl, '[0].games').map((g, idx) => ({ ...g, idx }))
-        setGames(data)
-      })
+    const fetchData = async () => {
+      const url = '/californiastoke/nfl2016.json'
+      const result = await axios(url)
+      const data = _.get(result, 'data.nfl[0].games')
+        .map((g, idx) => ({ ...g, idx }))
+
+      setGames(data)
+    }
+
+    fetchData()
   }, [])
 
   const renderGame = game => <Game data={game} key={game.idx} />
